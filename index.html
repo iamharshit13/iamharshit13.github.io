@@ -3,129 +3,326 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Harshit Agrawal — Portfolio</title>
-  <meta name="description" content="Harshit Agrawal — Senior Software Engineer (Generative AI | Data Engineering)" />
+  <title>Harshit Agrawal — Software Engineer</title>
+  <meta name="description" content="Harshit Agrawal — Senior Software Engineer specialising in Generative AI, LLM Applications, and Distributed Systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="#">Harshit<span class="dot">.</span></a>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">HA<span class="brand-dot">_</span></a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#about"      class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects"   class="nav-link">Projects</a>
+        <a href="#skills"     class="nav-link">Skills</a>
+        <a href="#contact"    class="nav-link">Contact</a>
       </nav>
+      <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#about"      class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects"   class="nav-link">Projects</a>
+      <a href="#skills"     class="nav-link">Skills</a>
+      <a href="#contact"    class="nav-link">Contact</a>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero-left">
-        <h1>Hi, I'm Harshit<span class="accent">.</span></h1>
-        <p class="lead">Senior Software Engineer — I build production-grade Generative AI systems, data platforms, and scalable integrations.</p>
-        <div class="cta">
-          <a class="btn" href="#projects">View work</a>
-          <a class="btn ghost" href="#contact">Get in touch</a>
-        </div>
-        <ul class="meta">
-          <li><strong>Location</strong> India</li>
-          <li><strong>Open to</strong> Freelance & Full-time opportunities</li>
-        </ul>
-      </div>
-      <div class="hero-right">
-        <!-- stylized SVG avatar -->
-        <svg class="avatar" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avatar">
-          <defs>
-            <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0" stop-color="#7c3aed"/>
-              <stop offset="1" stop-color="#06b6d4"/>
-            </linearGradient>
-          </defs>
-          <rect width="120" height="120" rx="20" fill="#0b0f14" />
-          <circle cx="60" cy="40" r="26" fill="url(#g1)" opacity="0.95" />
-          <rect x="24" y="72" width="72" height="28" rx="8" fill="#0b1220" opacity="0.8"/>
-        </svg>
-      </div>
-    </section>
+  <main>
 
-    <section id="about" class="card">
-      <h2>About</h2>
-      <p>I'm Harshit — I design and implement GenAI-powered connectors, data pipelines, and production systems. I focus on scalable architecture, reliable integrations, and clean developer experience.</p>
-      <p>Technologies I use include Python, LangChain, LlamaIndex, StreamSets, Snowflake, AWS, Azure, Docker, Kafka and React.</p>
-    </section>
-
-    <section id="skills" class="card">
-      <h2>Core Skills</h2>
-      <div class="chips">
-        <span>Generative AI Development</span>
-        <span>Data Engineering</span>
-        <span>Python</span>
-        <span>Machine Learning</span>
-        <span>AWS / Azure / Snowflake</span>
-        <span>StreamSets</span>
-        <span>Docker & Kubernetes</span>
-        <span>SQL / NoSQL</span>
-        <span>Prompt Engineering</span>
-        <span>Cybersecurity Practices</span>
-      </div>
-    </section>
-
-    <section id="projects" class="card">
-      <h2>Highlighted Projects</h2>
-      <div class="grid">
-        <article class="project">
-          <h3>Generative AI Connector Framework</h3>
-          <p>Designed a production-grade framework integrating diverse SaaS apps using GPT, LangChain and Python for real-time automation.</p>
-        </article>
-        <article class="project">
-          <h3>Data Integration — ADDA</h3>
-          <p>Built StreamSets pipelines connecting Google 365, Snowflake, Kafka and ServiceNow with ETL & Reverse ETL techniques.</p>
-        </article>
-        <article class="project">
-          <h3>Cloud-Native Microservices Platform</h3>
-          <p>Developed containerized microservices on AWS and Azure, ensuring scalability and reliability for enterprise clients.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="experience" class="card">
-      <h2>Work Experience</h2>
-      <div class="timeline">
-        <div class="item">
-          <div class="when">2024 – Present</div>
-          <div class="what">
-            <h4>Senior Software Engineer — Persistent Systems</h4>
-            <ul>
-              <li>Led development of AI-driven automation solutions and scalable data pipelines.</li>
-              <li>Architected secure cloud deployments and CI/CD workflows.</li>
-            </ul>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-grid" aria-hidden="true"><div></div><div></div><div></div><div></div></div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="hero-tag reveal">
+            <span class="dot-live"></span>Open to new opportunities
+          </div>
+          <h1 class="hero-title reveal delay-1">
+            <span>Senior Software</span>
+            <span class="accent">Engineer.</span>
+          </h1>
+          <p class="hero-sub reveal delay-2">
+            I build production-grade <em>Generative AI systems</em>, distributed backends,
+            and high-scale data platforms. 4+ years shipping real things for real companies.
+          </p>
+          <div class="hero-cta reveal delay-3">
+            <a class="btn-primary" href="#experience">View Experience <span class="arrow">→</span></a>
+            <a class="btn-secondary" href="#contact">Get in Touch</a>
+          </div>
+          <div class="hero-meta reveal delay-4">
+            <span>📍 Pune, India</span>
+            <span class="sep">·</span>
+            <span>EY · Persistent Systems</span>
+            <span class="sep">·</span>
+            <span>Python · LLMs · AWS · Azure</span>
           </div>
         </div>
-        <div class="item">
-          <div class="when">2022 – 2024</div>
-          <div class="what">
-            <h4>Software Engineer — Persistent Systems</h4>
-            <ul>
-              <li>Built ETL solutions and integrated multiple SaaS platforms.</li>
-              <li>Worked on performance and reliability improvements for production systems.</li>
-            </ul>
-          </div>
+
+        <div class="hero-visual reveal delay-2" aria-hidden="true">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="badge-core"><span>HA</span></div>
+          <div class="orbit o1"><div class="orb-dot"></div></div>
+          <div class="orbit o2"><div class="orb-dot d2"></div></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="stat-strip reveal delay-4">
+          <div class="ss-item"><span class="ss-num">4+</span><span class="ss-lbl">Years experience</span></div>
+          <div class="ss-div"></div>
+          <div class="ss-item"><span class="ss-num">90%</span><span class="ss-lbl">Workflow automation</span></div>
+          <div class="ss-div"></div>
+          <div class="ss-item"><span class="ss-num">60%</span><span class="ss-lbl">Processing effort cut</span></div>
+          <div class="ss-div"></div>
+          <div class="ss-item"><span class="ss-num">99.9%</span><span class="ss-lbl">Platform reliability</span></div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="card">
-      <h2>Contact</h2>
-      <p>If you'd like to work together or have a role in mind, email me at <a href="mailto:harshitagrawal1398@gmail.com">harshitagrawal1398@gmail.com</a> or connect on <a href="https://linkedin.com/in/harshitagrawal13" target="_blank">LinkedIn</a>.</p>
-      <div class="footnote">© <span id="year"></span> Harshit Agrawal — HarshitVerse</div>
-    </section>
+    <div class="container sections-wrap">
+
+      <!-- ABOUT -->
+      <section id="about" class="section reveal">
+        <div class="sec-label">01 — About</div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="about-lead">
+              Software Engineer with 4+ years building scalable backend systems, distributed architectures, and production-grade Generative AI applications for enterprise-scale platforms.
+            </p>
+            <p class="about-body">
+              Currently a Senior Consultant at EY, focused on LLM-powered automation across logistics and supply chains. Before that, I spent four years at Persistent Systems taking a SaaS platform from zero to automating 90% of enterprise workflows. My sweet spot is the intersection of AI and infrastructure — where models meet production.
+            </p>
+            <p class="about-body mt">
+              B.Tech in Computer Science from Symbiosis University of Applied Sciences — CGPA 9.1/10. Published ML researcher.
+            </p>
+          </div>
+          <div class="about-cards">
+            <div class="ac"><span class="ac-icon">⚡</span><span>Performance-first engineering</span></div>
+            <div class="ac"><span class="ac-icon">🤖</span><span>LLM apps &amp; RAG pipelines</span></div>
+            <div class="ac"><span class="ac-icon">☁️</span><span>AWS · Azure · Oracle Cloud</span></div>
+            <div class="ac"><span class="ac-icon">🔬</span><span>Published ML researcher</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section reveal">
+        <div class="sec-label">02 — Experience</div>
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-left">
+              <div class="tl-period">Jan 2026 — Present</div>
+              <div class="tl-co active">EY (Ernst &amp; Young)</div>
+              <div class="tl-loc">Pune, India</div>
+            </div>
+            <div class="tl-mid">
+              <div class="tl-dot active"></div>
+              <div class="tl-line"></div>
+            </div>
+            <div class="tl-right">
+              <h3 class="tl-role">Senior Consultant — Software Engineer</h3>
+              <div class="tl-tags">
+                <span>OpenAI</span><span>LangChain</span><span>LlamaIndex</span><span>Azure</span><span>Python</span><span>SAP</span>
+              </div>
+              <ul class="tl-list">
+                <li>Built a GenAI-powered email automation system for logistics and supply chain — <strong>reducing manual processing effort by 60%</strong> and improving response turnaround time.</li>
+                <li>Developed scalable backend services with Python and Azure (Functions, Web Services), integrating SAP enterprise data for real-time tracking, insights, and workflow automation.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-left">
+              <div class="tl-period">Feb 2022 — Jan 2026</div>
+              <div class="tl-co">Persistent Systems</div>
+              <div class="tl-loc">Pune, India</div>
+            </div>
+            <div class="tl-mid">
+              <div class="tl-dot"></div>
+            </div>
+            <div class="tl-right">
+              <h3 class="tl-role">Lead Software Engineer</h3>
+              <div class="tl-tags">
+                <span>GPT-4</span><span>AWS Bedrock</span><span>LangChain</span><span>StreamSets</span><span>Snowflake</span><span>Kafka</span>
+              </div>
+              <ul class="tl-list">
+                <li>Built and deployed a production GenAI SaaS platform using GPT-4, LangChain, LlamaIndex and AWS Bedrock — <strong>automating 90% of enterprise workflows</strong>.</li>
+                <li>Designed scalable distributed backend systems for high-scale LLM platforms including APIs, LLM orchestration, vector search, and data pipelines.</li>
+                <li>Improved LLM response accuracy by <strong>35%</strong> through advanced prompt engineering, RAG optimisation, and robust OpenAPI integrations.</li>
+                <li>Developed 15+ high-throughput ETL and real-time data pipelines — <strong>increasing pipeline performance by 50%</strong>.</li>
+                <li>Ensured <strong>99.9% platform reliability</strong> across AWS and Oracle Cloud through automated provisioning, monitoring, and scheduling.</li>
+                <li>Reduced cloud infrastructure costs by <strong>20%</strong> and accelerated delivery by 30%.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section reveal">
+        <div class="sec-label">03 — Projects &amp; Publications</div>
+        <div class="proj-grid">
+
+          <article class="proj-card">
+            <div class="proj-head">
+              <span class="proj-num">01</span>
+              <a class="proj-gh" href="https://github.com/iamharshit13" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <h3 class="proj-title">Microverse — Distributed Recommendation Platform</h3>
+            <p class="proj-desc">Containerised microservices with Docker and Kubernetes, CI/CD via GitHub Actions, and event-driven communication using Kafka and Redis for real-time recommendations and high-throughput data processing.</p>
+            <div class="proj-tags">
+              <span>Python</span><span>Django</span><span>FastAPI</span><span>React</span><span>Kafka</span><span>Redis</span><span>Docker</span><span>Kubernetes</span><span>GitHub Actions</span>
+            </div>
+          </article>
+
+          <article class="proj-card">
+            <div class="proj-head">
+              <span class="proj-num">02</span>
+            </div>
+            <h3 class="proj-title">E-Commerce Image Intelligence</h3>
+            <p class="proj-desc">Flask-based web app using a custom ML model and Google Vision API for automated product detection and large-scale data scraping for e-commerce cataloguing at scale.</p>
+            <div class="proj-tags">
+              <span>Python</span><span>Flask</span><span>TensorFlow</span><span>Google Vision API</span><span>Selenium</span><span>BeautifulSoup</span>
+            </div>
+          </article>
+
+          <article class="proj-card proj-pub">
+            <div class="proj-head">
+              <span class="proj-num">03</span>
+              <span class="proj-badge">Publication · Sept 2020</span>
+            </div>
+            <h3 class="proj-title">Comparative Analysis of CNN Algorithms</h3>
+            <p class="proj-desc">Peer-reviewed research paper analysing performance of different Convolutional Neural Network architectures across image classification benchmarks.</p>
+            <div class="proj-tags">
+              <span>Deep Learning</span><span>CNNs</span><span>Computer Vision</span><span>Research</span>
+            </div>
+            <a class="proj-doi" href="https://doi.org/10.22214/ijraset.2020.31693" target="_blank" rel="noopener">
+              DOI: 10.22214/ijraset.2020.31693 ↗
+            </a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section reveal">
+        <div class="sec-label">04 — Skills</div>
+        <div class="skills-wrap">
+
+          <div class="sg">
+            <div class="sg-title">Generative AI &amp; LLMs</div>
+            <div class="sg-tags">
+              <span class="tag tp">OpenAI / GPT-4</span>
+              <span class="tag tp">LangChain</span>
+              <span class="tag tp">LlamaIndex</span>
+              <span class="tag tp">AWS Bedrock</span>
+              <span class="tag tp">RAG</span>
+              <span class="tag tp">AI Agents</span>
+              <span class="tag tp">Prompt Engineering</span>
+              <span class="tag tp">ChromaDB</span>
+              <span class="tag tp">Vector Databases</span>
+              <span class="tag tp">Hugging Face</span>
+            </div>
+          </div>
+
+          <div class="sg">
+            <div class="sg-title">Backend &amp; APIs</div>
+            <div class="sg-tags">
+              <span class="tag tc">Python</span>
+              <span class="tag tc">FastAPI</span>
+              <span class="tag tc">Flask</span>
+              <span class="tag tc">Django</span>
+              <span class="tag tc">REST APIs</span>
+              <span class="tag tc">Microservices</span>
+              <span class="tag tc">System Design</span>
+              <span class="tag tc">Distributed Systems</span>
+              <span class="tag tc">JavaScript</span>
+              <span class="tag tc">React</span>
+            </div>
+          </div>
+
+          <div class="sg">
+            <div class="sg-title">Data Engineering</div>
+            <div class="sg-tags">
+              <span class="tag tt">StreamSets</span>
+              <span class="tag tt">Snowflake</span>
+              <span class="tag tt">Kafka</span>
+              <span class="tag tt">ETL / Reverse ETL</span>
+              <span class="tag tt">PostgreSQL</span>
+              <span class="tag tt">MySQL</span>
+              <span class="tag tt">Amazon RDS</span>
+              <span class="tag tt">ServiceNow</span>
+              <span class="tag tt">SAP Integration</span>
+            </div>
+          </div>
+
+          <div class="sg">
+            <div class="sg-title">Cloud &amp; DevOps</div>
+            <div class="sg-tags">
+              <span class="tag tg">AWS</span>
+              <span class="tag tg">Azure</span>
+              <span class="tag tg">Oracle Cloud</span>
+              <span class="tag tg">Docker</span>
+              <span class="tag tg">Kubernetes</span>
+              <span class="tag tg">GitHub Actions</span>
+              <span class="tag tg">CI/CD</span>
+              <span class="tag tg">Linux</span>
+              <span class="tag tg">Bash</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section reveal">
+        <div class="sec-label">05 — Contact</div>
+        <div class="contact-wrap">
+          <h2 class="contact-heading">Let's build something <em>remarkable.</em></h2>
+          <p class="contact-sub">Available for full-time roles and freelance engagements. Based in Pune, India — happy to work remotely or relocate.</p>
+          <div class="contact-rows">
+            <a class="cr" href="mailto:harshitagrawal1398@gmail.com">
+              <div class="cr-l"><span class="cr-lbl">Email</span><span class="cr-val">harshitagrawal1398@gmail.com</span></div>
+              <span class="cr-arr">→</span>
+            </a>
+            <a class="cr" href="tel:+918109671789">
+              <div class="cr-l"><span class="cr-lbl">Phone</span><span class="cr-val">+91 81096-71789</span></div>
+              <span class="cr-arr">→</span>
+            </a>
+            <a class="cr" href="https://linkedin.com/in/harshitagrawal13" target="_blank" rel="noopener">
+              <div class="cr-l"><span class="cr-lbl">LinkedIn</span><span class="cr-val">linkedin.com/in/harshitagrawal13</span></div>
+              <span class="cr-arr">↗</span>
+            </a>
+            <a class="cr" href="https://github.com/iamharshit13" target="_blank" rel="noopener">
+              <div class="cr-l"><span class="cr-lbl">GitHub</span><span class="cr-val">github.com/iamharshit13</span></div>
+              <span class="cr-arr">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container">Built with • minimal • fast • accessible</div>
+    <div class="container footer-inner">
+      <span class="footer-brand">HarshitVerse</span>
+      <span class="footer-copy">© <span id="year"></span> Harshit Agrawal</span>
+      <span class="footer-note">Pune · India</span>
+    </div>
   </footer>
 
   <script src="script.js"></script>
