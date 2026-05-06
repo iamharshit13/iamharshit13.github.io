@@ -66,42 +66,68 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const projectsGrid = document.getElementById('projects-grid');
   if (projectsGrid) {
-    projectsGrid.innerHTML = projects.map((project, index) => {
-      const projectNum = String(index + 1).padStart(2, '0');
-      const cardClasses = ['proj-card'];
-      if (project.fullWidth) cardClasses.push('proj-pub');
+    projectsGrid.innerHTML = '';
+    projects.forEach((project, index) => {
+      const card = document.createElement('article');
+      card.className = project.fullWidth ? 'proj-card proj-pub' : 'proj-card';
 
-      const tagsMarkup = (project.tags || [])
-        .map(tag => `<span>${tag}</span>`)
-        .join('');
+      const head = document.createElement('div');
+      head.className = 'proj-head';
 
-      const githubLinkMarkup = project.githubUrl
-        ? `<a class="proj-gh" href="${project.githubUrl}" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>`
-        : '';
+      const num = document.createElement('span');
+      num.className = 'proj-num';
+      num.textContent = String(index + 1).padStart(2, '0');
+      head.appendChild(num);
 
-      const badgeMarkup = project.badge
-        ? `<span class="proj-badge">${project.badge}</span>`
-        : '';
+      if (project.badge) {
+        const badge = document.createElement('span');
+        badge.className = 'proj-badge';
+        badge.textContent = project.badge;
+        head.appendChild(badge);
+      } else if (project.githubUrl) {
+        const gh = document.createElement('a');
+        gh.className = 'proj-gh';
+        gh.href = project.githubUrl;
+        gh.target = '_blank';
+        gh.rel = 'noopener';
+        gh.setAttribute('aria-label', `${project.title} GitHub Repository`);
+        gh.textContent = 'GitHub ↗';
+        head.appendChild(gh);
+      }
 
-      const doiMarkup = project.doiUrl
-        ? `<a class="proj-doi" href="${project.doiUrl}" target="_blank" rel="noopener">${project.doiText || 'Read Publication ↗'}</a>`
-        : '';
+      const title = document.createElement('h3');
+      title.className = 'proj-title';
+      title.textContent = project.title;
 
-      return `
-        <article class="${cardClasses.join(' ')}">
-          <div class="proj-head">
-            <span class="proj-num">${projectNum}</span>
-            ${badgeMarkup || githubLinkMarkup}
-          </div>
-          <h3 class="proj-title">${project.title}</h3>
-          <p class="proj-desc">${project.desc}</p>
-          <div class="proj-tags">${tagsMarkup}</div>
-          ${doiMarkup}
-        </article>
-      `;
-    }).join('');
+      const desc = document.createElement('p');
+      desc.className = 'proj-desc';
+      desc.textContent = project.desc;
+
+      const tags = document.createElement('div');
+      tags.className = 'proj-tags';
+      (project.tags || []).forEach((tag) => {
+        const tagEl = document.createElement('span');
+        tagEl.textContent = tag;
+        tags.appendChild(tagEl);
+      });
+
+      card.appendChild(head);
+      card.appendChild(title);
+      card.appendChild(desc);
+      card.appendChild(tags);
+
+      if (project.doiUrl) {
+        const doi = document.createElement('a');
+        doi.className = 'proj-doi';
+        doi.href = project.doiUrl;
+        doi.target = '_blank';
+        doi.rel = 'noopener';
+        doi.textContent = project.doiText || 'Read Publication ↗';
+        card.appendChild(doi);
+      }
+
+      projectsGrid.appendChild(card);
+    });
   }
 
   /* ── Scroll reveal ──────────────────────────── */
